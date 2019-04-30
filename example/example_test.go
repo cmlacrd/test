@@ -9,6 +9,13 @@ import (
 	
 )
 
+type HTTPClient struct {
+	Host     string
+	Request  *http.Request
+	Expected string
+	Result   string   
+}
+
 //create a new http client 
 func NewClient(host string) *HTTPClient{
 	return &HTTPClient{
@@ -52,7 +59,7 @@ func (ht *HTTPClient) IsValid() bool{
 	return true
 }
 
-//example how to work all functions
+//example how to work 
 
 func TestSignInSuccess(t *testing.T){	
 	
